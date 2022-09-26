@@ -22,4 +22,12 @@ class FactorialTest {
         int out = Factorial.calc(in);
         assertThat(out).isEqualTo(expected);
     }
+
+    @Test
+    public void whenFactorialForZeroThenOne() {
+        int in = 0;
+        int expected = 1;
+        int out = Factorial.calc(in);
+        assertThat(out).isEqualTo(expected);
+    }
 }
