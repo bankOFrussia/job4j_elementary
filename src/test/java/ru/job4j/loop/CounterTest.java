@@ -23,4 +23,13 @@ class CounterTest {
         int rsl = Counter.sumByEven(start, finish);
         assertThat(rsl).isEqualTo(expected);
     }
+
+    @Test
+    public void whenSumByEvenNumbersFrom2To12Then42() {
+        int start = 2;
+        int finish = 12;
+        int expected = 42;
+        int rsl = Counter.sumByEven(start, finish);
+        assertThat(rsl).isEqualTo(expected);
+    }
 }
