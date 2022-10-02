@@ -89,4 +89,43 @@ public class MatrixCheckTest {
         char[] rsl = MatrixCheck.extractDiagonal(in);
         assertThat(rsl).containsExactly(expected);
     }
+
+    @Test
+    public void whenDataMonoTrueThenTrue() {
+        char[][] in = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '}
+        };
+        boolean rsl = MatrixCheck.isWin(in);
+        assertThat(rsl).isTrue();
+    }
+
+    @Test
+    public void whenDataNotMonoByTrueThenFalse() {
+        char[][] in = {
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', 'X', ' ', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '}
+        };
+        boolean rsl = MatrixCheck.isWin(in);
+        assertThat(rsl).isFalse();
+    }
+
+    @Test
+    public void whenDataHMonoByTrueThenTrue() {
+        char[][] in = {
+                {' ', ' ', ' ', ' ', ' '},
+                {' ', ' ', ' ', ' ', ' '},
+                {'X', 'X', 'X', 'X', 'X'},
+                {' ', ' ', 'X', ' ', ' '},
+                {' ', ' ', 'X', ' ', ' '}
+        };
+        boolean rsl = MatrixCheck.isWin(in);
+        assertThat(rsl).isTrue();
+    }
 }
