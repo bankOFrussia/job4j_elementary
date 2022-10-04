@@ -8,41 +8,24 @@ public class JavaNameValidator {
         boolean rsl = false;
         char[] array = name.toCharArray();
 
-        for (int i = 0; i < name.length(); i++) {
-            int code = name.codePointAt(i);
-            if (isSpecialSymbol(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code) || isDigit(code)) {
-                rsl = true;
-            } else {
-                rsl = false;
+        if (!(name.isEmpty() || isDigit(name.charAt(0)) || isUpperLatinLetter(array[0]))) {
+            for (int i = 1; i < name.length(); i++) {
+                int code = name.codePointAt(i);
+                rsl = isSpecialSymbol(code) || isUpperLatinLetter(code) || isLowerLatinLetter(code) || isDigit(code);
             }
-        }
-        if (name.isEmpty() || isDigit(name.charAt(0)) || isUpperLatinLetter(array[0])) {
-            rsl = false;
         }
         return rsl;
     }
 
     public static boolean isSpecialSymbol(int code) {
-        boolean rsl = false;
-        if (code == 36 || code == 95) {
-            rsl = true;
-        }
-        return rsl;
+        return code == 36 || code == 95;
     }
 
     public static boolean isUpperLatinLetter(int code) {
-        boolean rsl = false;
-        if (code >= 65 && code <= 90) {
-        rsl = true;
-        }
-    return rsl;
+    return code >= 65 && code <= 90;
     }
 
     public static boolean isLowerLatinLetter(int code) {
-        boolean rsl = false;
-        if (code >= 97 && code <= 122) {
-            rsl = true;
-        }
-        return rsl;
+        return code >= 97 && code <= 122;
     }
 }
