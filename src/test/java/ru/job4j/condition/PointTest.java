@@ -3,40 +3,32 @@ package ru.job4j.condition;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class PointTest {
 
     @Test
-    public void when00to20Then2() {
-        int x1 = 0;
-        int y1 = 0;
-        int x2 = 2;
-        int y2 = 0;
+    public void when00to02Then2() {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 2);
         int expected = 2;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
     public void when33to31Then2() {
-        int x1 = 3;
-        int y1 = 3;
-        int x2 = 3;
-        int y2 = 1;
+        Point a = new Point(3, 3);
+        Point b = new Point(3, 1);
         int expected = 2;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 
     @Test
     public void when12to16Then4() {
-        int x1 = 1;
-        int y1 = 2;
-        int x2 = 1;
-        int y2 = 6;
+        Point a = new Point(1, 2);
+        Point b = new Point(1, 6);
         int expected = 4;
-        double out = Point.distance(x1, y1, x2, y2);
+        double out = a.distance(b);
         Assert.assertEquals(expected, out, 0.01);
     }
 }
