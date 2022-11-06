@@ -11,9 +11,7 @@ public class FactTest {
     public void whenMinus1ThenException() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    Fact.calc(-1);
-                });
+                () -> Fact.calc(-1));
         assertThat(exception.getMessage()).isEqualTo("N could not be less then 0");
     }
 
@@ -21,9 +19,7 @@ public class FactTest {
     public void whenMinus22ThenException() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
-                () -> {
-                    Fact.calc(-22);
-                });
+                () -> Fact.calc(-22));
         assertThat(exception.getMessage()).isEqualTo("N could not be less then 0");
     }
 
