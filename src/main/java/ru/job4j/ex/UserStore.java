@@ -8,9 +8,9 @@ public class UserStore {
                 on = false;
                 return user;
             }
-            if (on) {
-                throw new UserNotFoundException("Пользователь не найден");
-            }
+        }
+        if (on) {
+            throw new UserNotFoundException("Пользователь не найден");
         }
         return null;
     }
@@ -25,7 +25,7 @@ public class UserStore {
     public static void main(String[] args) {
         User[] users = {new User("Petr Arsentev", true)};
         try {
-            User user = findUser(users, "Petr Arsentev");
+            User user = findUser(users, "Petr Arsente");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
