@@ -20,7 +20,9 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password should contain at least one uppercase letter");
         }
         for (char one : password.toCharArray()) {
-            if (isDigit(one)) {
+            if (countSymbols > 0 && countNumbers > 0) {
+                break;
+            } else if (isDigit(one)) {
                 countNumbers++;
             } else if (!isLetterOrDigit(one)) {
                 countSymbols++;
